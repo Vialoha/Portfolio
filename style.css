@@ -7,8 +7,8 @@
   
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background: linear-gradient(to bottom, darkblue, black);
+    line-height: 2;
+    background: linear-gradient(to top,black, rgb(30, 30, 30));
     color: whitesmoke;
   }
   
@@ -19,6 +19,7 @@
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
+    z-index: 1000;
   }
   
   nav {
@@ -96,24 +97,12 @@
   }
   
   /* Skills */
-  .skills-grid {
+  .skills {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1rem;
   }
   
-  .skill {
-    background: #393e46;
-    color: white;
-    padding: 1rem;
-    border-radius: 10px;
-    transition: transform 0.3s;
-  }
-  
-  .skill:hover {
-    transform: scale(1.05);
-    background: #00adb5;
-  }
   
   /* Projetos */
   .projetos-grid {
@@ -123,16 +112,17 @@
   }
   
   .projeto-card {
-    background: white;
+    background: #393e46;
     padding: 1.5rem;
-    border-radius: 15px;
+    border-radius: 50px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s;
-    color: darkblue;
+    color: white;
   }
   
   .projeto-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    background: black;
   }
   
   /* Footer */
@@ -141,6 +131,42 @@
     color: white;
     text-align: center;
     padding: 1rem;
+    position: relative;
     margin-top: 2rem;
+    z-index: 1000;
   }
   
+
+
+
+  /* CSS - páginas de projetos */
+
+  .projeto-detalhe {
+    max-width: 900px;
+    margin: auto;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  
+  .projeto-img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    margin: 2rem 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+
+  /* efeitos de transição*/
+
+  .reveal {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.6s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateX(0);
+  }

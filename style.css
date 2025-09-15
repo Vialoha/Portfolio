@@ -6,7 +6,8 @@
   }
   
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    font-family: "Exo 2";
     line-height: 2;
     background: linear-gradient(to top,black, rgb(30, 30, 30));
     color: whitesmoke;
@@ -41,7 +42,7 @@
   }
   
   .nav-links a:hover {
-    color: #00adb5;
+    color: #ffde59;
   }
   
   /* Hero */
@@ -112,17 +113,27 @@
   }
   
   .projeto-card {
-    background: #393e46;
+    background: #111111;
     padding: 1.5rem;
     border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s;
     color: white;
+    margin-bottom: 20px;
   }
   
   .projeto-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
     background: black;
+    box-shadow: 0 10px 40px #8b6d00;
+  }
+
+  .card-link {
+    text-decoration: none;
+  }
+
+  .card-title{
+    padding-bottom: 25px;
+    font-size: 20px;
   }
   
   /* Footer */
@@ -154,6 +165,15 @@
     border-radius: 15px;
     margin: 2rem 0;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .ul{
+    text-align: left;
+  }
+
+  .ferramentas{
+    padding-bottom: 10px;
+    font-size: 25px;
   }
 
 

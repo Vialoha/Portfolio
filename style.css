@@ -12,6 +12,12 @@
     background: linear-gradient(to top,black, rgb(30, 30, 30));
     color: whitesmoke;
   }
+
+  html, body{
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+  }
   
   /* Header */
   header {
@@ -22,7 +28,7 @@
     top: 0;
     z-index: 1000;
   }
-  
+
   nav {
     display: flex;
     justify-content: space-between;
@@ -30,28 +36,129 @@
   }
   
   .nav-links {
+    color:white;
     list-style: none;
     display: flex;
     gap: 1.5rem;
+    text-align: right;
+  }
+
+  .nav-links li{
+    position:relative;
   }
   
-  .nav-links a {
+  .nav-links li a {
     color: white;
     text-decoration: none;
     transition: color 0.3s;
+    text-align: right;
   }
-  
-  .nav-links a:hover {
-    color: #ffde59;
+
+  .nav-links li a:hover{
+    color: darkgoldenrod;
   }
+
+  .nav-links a.active{
+    color:darkgoldenrod;
+  }
+
+  /*Dropdown do menu - projetos */
+
+  .dropdown-content{
+    list-style-type: none;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left:0;
+    background: #111;
+    flex-direction: column;
+    min-width:150px;
+    z-index:100;
+  }
+
+  .dropdown-content li a {
+    padding: 10px 15px;
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-content{
+    display:flex;
+  }
+
+  /* Botão Hamburguer */
+
+  .hamburger{
+    display:none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    gap:5px;
+    width: 30px;
+    height: 25px;
+  }
+
+  .hamburger span {
+    display:block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+  }
+
+@media (max-width:768px){
+
+    .hamburger{
+      display: flex;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: #111;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 15px 40px;
+      margin: 0;
+      border-radius: 0;
+      box-sizing: border-box;
+    }
+
+    .nav-links.show {
+      display:flex;
+    }
+
+    .dropdown-content {
+      position: static;
+      display: none;
+      flex-direction: column;
+    }
+
+    .dropdown.show .dropdown-content{
+      display:flex;
+    }
+
+  }
+
+
   
   /* Hero */
+
+  @media (max-width:768px){
+    #hero{flex-direction:column;
+    }
+    #hero img {
+      order: -1;
+    }
+  }
+
   #hero {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 4rem 2rem;
-    color: white;
+    color: whitesmoke;
   }
   
   #hero img {
@@ -62,7 +169,7 @@
   }
   
   .hero-content {
-    max-width: 500px;
+    width: 100%;
   }
   
   .hero-content h2 span {
@@ -87,6 +194,7 @@
   
   /* Secções */
   section {
+    width:100%;
     padding: 4rem 2rem;
     text-align: center;
   }
@@ -99,6 +207,7 @@
   
   /* Skills */
   .skills {
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1rem;
@@ -107,6 +216,7 @@
   
   /* Projetos */
   .projetos-grid {
+    width:100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
